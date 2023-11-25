@@ -9,7 +9,6 @@ import com.example.core.domain.preferences.Preferences
 import com.example.core.util.UiEvent
 import com.example.core.util.UiText
 import com.example.core.R
-import com.example.core.navigation.Route
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -42,7 +41,7 @@ class WeightViewModel @Inject constructor(
                 return@launch
             }
             preferences.saveWeight(weightNumber)
-            _uiEvent.send(UiEvent.Navigate(Route.ACTIVITY))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 
